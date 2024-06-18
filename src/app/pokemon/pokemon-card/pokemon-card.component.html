@@ -1,0 +1,52 @@
+@if (pokemon$ | async ; as pokemon) {
+    <div class='pokemon-card type-{{ pokemon.types[0].name }}'>
+            <h1>
+              <b>
+                <!-- {{pokemon. === null
+                  ? "Pokemon de base"
+                  : `Evolution de ${pokemon.evo}`}} -->
+                  {{ pokemon.basePokemon !== null ? "Evolution de " + pokemon.basePokemon : "Pokémon de base" }}
+              </b>
+              {{pokemon.displayName}}
+              <!-- <Nrj nrjType={pokemon.type}></Nrj> -->
+              <span>{{pokemon.hp}} PV</span>
+            </h1>
+            <figure>
+              <img src="../../../assets/{{ pokemon.name }}.jpg">
+              <figcaption>
+                {{ pokemon.miniDescription }}. Taille: {{pokemon.height}} m, poids: {{ pokemon.weight }} kg
+              </figcaption>
+            </figure>
+            <div class="attack-block">
+              <div class="attack attack-1 attack-only">
+                <div class="nrj-block">
+                  <!-- {pokemon.talent == true ? "" : <Nrj nrjType={"normal"}/>} -->
+                </div>
+                <span></span>
+              </div>
+              <div class="attack attack-2">
+                <div class="nrj-block">
+                  <!-- <Nrj nrjType={pokemon.type}></Nrj>
+                  <Nrj nrjType="normal"></Nrj> -->
+                </div>
+                <h2>
+                  
+                </h2>
+                <span></span>
+              </div>
+            </div>
+            <div class="stats-block">
+              <h3>
+                Faiblesse
+              </h3>
+              
+              <h3>Résistance</h3>
+              <h3>
+                Coût de retraite
+              </h3>
+            </div>
+            <p class="infos-block">
+              {{ pokemon.description }}. NIV. {{ pokemon.level }} No.{{ pokemon.id }}
+            </p>
+        </div>
+}
